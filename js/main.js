@@ -159,7 +159,7 @@ Object notation
 Hoisting
 - Using dot notation, do the following:
   - add a property of "sauceType" with a value of "tomato".
-  - add a property of "protien" with a value of "chicken".
+  - add a property of "protein" with a value of "chicken".
   - add a propety of "orderNow" with a value of that would make it pass the assertion.
   - add a property of "sauce" with a value of that would make it pass the assertion.
 - Fix hoisting issues
@@ -167,8 +167,6 @@ Hoisting
 **************************************************************************************/
 (function(){
   "use strict";
-
-  pizza.pizzaMkr();
 
   var pizza = {
     sauce: "",
@@ -182,6 +180,13 @@ Hoisting
       }
     }
   }
+
+  pizza.sauceType = "tomato";
+  pizza.protein = "chicken";
+  pizza.orderNow = true;
+  pizza.sauce = true;
+
+  pizza.pizzaMkr();
 
   console.log("# 7 pizza.pizzaMkr()", pizza.pizzaMkr());
   console.assert(pizza.pizzaMkr() == "We are making your pizza with tomato and chicken. Pickup in 20 minutes.", "#7 Test failed. Did you add the propeties? Did you set the values correctly? Did you fix the hoisting issues?")

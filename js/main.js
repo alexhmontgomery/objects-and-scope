@@ -293,7 +293,7 @@ Compartmentalization
   var multiply = 2 * 8;
 
   function duplicate() {
-    multiply = 2 * 10;
+    var multiply = 2 * 10;
   };
 
   duplicate();

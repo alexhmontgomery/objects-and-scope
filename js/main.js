@@ -188,7 +188,7 @@ Hoisting
 
   pizza.pizzaMkr();
 
-  console.log("# 7 pizza.pizzaMkr()", pizza.pizzaMkr());
+  console.log("#7 pizza.pizzaMkr()", pizza.pizzaMkr());
   console.assert(pizza.pizzaMkr() == "We are making your pizza with tomato and chicken. Pickup in 20 minutes.", "#7 Test failed. Did you add the propeties? Did you set the values correctly? Did you fix the hoisting issues?")
 })();
 
@@ -216,18 +216,22 @@ HINTS:
 (function() {
   "use strict";
 
-  var goodStanding = false;
-  var monthsActive = 2;
+  var goodStanding = true;
+  var monthsActive = 18;
 
   //Do not modify 'name' globaly.
   var name = null;
 
-  accountCheck();
+
 
   var benefit = {}
   //Add properties to 'benefit' using braket notation
+  benefit["credit"] = 50;
+  benefit["discount"] = 5;
 
   var accountCheck = function() {
+
+    name = "James";
 
     var greeting = function() {
 
@@ -266,7 +270,8 @@ HINTS:
       }
     }
     //Here 'accountCheck' should return both the 'greeting' output and the 'accountStat' output.
-  }
+    return greeting() + " " + accountStat();
+  };
 
   console.log("#8 accountCheck():", accountCheck());
   console.assert(name == "James", "Test failed. You should set 'name' to 'james' from within accountCheck()");
